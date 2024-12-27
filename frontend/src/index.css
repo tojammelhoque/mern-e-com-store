@@ -5,14 +5,40 @@
 @tailwind utilities;
 
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f5f0f0;
   @apply font-poppins;
 }
 
 .container {
-  width: 90%;
+  max-width: 1200px;
+  width: 95%;
   margin: auto;
 }
 
 .link:hover {
   color: #ff5252;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff5252;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f0f0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #f5f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff7373;
 }
