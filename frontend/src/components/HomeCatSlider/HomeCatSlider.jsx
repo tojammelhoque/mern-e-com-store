@@ -12,7 +12,7 @@ function HomeCatSlider() {
       {/* Swiper Slider */}
       <Swiper
         slidesPerView={6}
-        spaceBetween={30}
+        spaceBetween={20}
         loop={true}
         autoplay={{
           delay: 2500,
@@ -38,7 +38,7 @@ function HomeCatSlider() {
                 </div>
 
                 <div className="text-div mt-3">
-                  <h3 className="text-lg font-medium text-center">
+                  <h3 className="text-base font-medium text-center">
                     {slide.title}
                   </h3>
                 </div>
@@ -46,10 +46,10 @@ function HomeCatSlider() {
             </Link>
           </SwiperSlide>
         ))}
-        <div className="swiper-prev absolute z-20 top-[50%] w-[30px] h-[30px]  flex items-center justify-center bg-[#ff5252] text-white rounded-md group-hover:left-5 -left-80 duration-500">
+        <div className="swiper-prev absolute z-20 top-[45%] w-[30px] h-[30px]  flex items-center justify-center bg-[#ff5252] text-white rounded-md group-hover:left-5 -left-80 duration-500">
           <IoIosArrowBack className="text-2xl cursor-pointer" />
         </div>
-        <div className="swiper-next absolute z-20 top-[50%] w-[30px] h-[30px] flex items-center justify-center bg-[#ff5252] text-white rounded-md group-hover:right-5 -right-80 duration-500">
+        <div className="swiper-next absolute z-20 top-[45%] w-[30px] h-[30px] flex items-center justify-center bg-[#ff5252] text-white rounded-md group-hover:right-5 -right-80 duration-500">
           <IoIosArrowForward className="text-2xl cursor-pointer" />
         </div>
       </Swiper>

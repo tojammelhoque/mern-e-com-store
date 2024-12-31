@@ -1,9 +1,131 @@
-import React from "react";
+import { useState } from "react";
 import HomeCatSlider from "../../components/HomeCatSlider/HomeCatSlider";
 import OfferDesk from "../../components/OfferDesk/OfferDesk";
 import Slider from "../../components/Slider/Slider";
+import ProductItem from "../../components/ProductItem/ProductItem";
+import BlogSection from "../../components/BlogSection/BlogSection";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
+  const ProductItemData = [
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Fashion",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Furniture",
+    },
+    {
+      brandName: "Initech Space",
+      productName: (
+        <>
+          Apple Smart Watch <br /> Midnight Aluminum{" "}
+        </>
+      ),
+      rating: 4.5,
+      price: 129,
+      imgSrc: "/images/asset19.jpeg",
+      category: "Electronics",
+    },
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState("Fashion");
+
+  const filteredProductData = ProductItemData.filter(
+    (item) => item.category === selectedCategory
+  );
+  const latestProductData = filteredProductData.slice(0, 6);
+  const featuredProductData = filteredProductData.slice(0, 4);
+
   return (
     <>
       {/* Main Content */}
@@ -100,14 +222,59 @@ function Home() {
           {["Fashion", "Electronics", "Furniture"].map((category, index) => (
             <h2
               key={index}
-              className="text-lg font-semibold cursor-pointer hover:text-[#ff5252] transition-colors"
+              className={`text-lg font-semibold cursor-pointer hover:text-[#ff5252] transition-colors duration-300 ease-in-out ${
+                selectedCategory === category
+                  ? "text-[#ff5252]"
+                  : "text-gray-500"
+              }`}
+              onClick={() => setSelectedCategory(category)}
             >
               {category}
             </h2>
           ))}
         </div>
-        <div className="mt-8"></div>
+        <div className="mt-8 container">
+          <ProductItem
+            productItemData={filteredProductData}
+            slidesPerView={5}
+            spaceBetween={0}
+          />
+        </div>
+        <section className="latest-products bg-white py-10">
+          <div className="container mx-auto">
+            <h2 className="text-2xl font-semibold mb-6">Latest Products</h2>
+            <ProductItem
+              productItemData={latestProductData}
+              slidesPerView={5}
+              spaceBetween={30}
+            />
+          </div>
+        </section>
+        {/* Featured Products */}
+        <div className="featured-section container py-10">
+          <h2 className="text-2xl font-semibold mb-6">Featured Products</h2>
+          <div className="featured-products">
+            <ProductItem
+              productItemData={featuredProductData}
+              slidesPerView={5}
+              spaceBetween={20}
+            />
+          </div>
+        </div>
+        {/* Offer Desk Section */}
+        <div className="my-8 container bg-white">
+          <OfferDesk slidesPerView={2} spaceBetween={30} />
+        </div>
       </div>
+      <section className="bg-white py-10 blog-section">
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-semibold mb-6">Latest Blog</h2>
+          <div className="blog-posts">
+            <BlogSection />
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 }

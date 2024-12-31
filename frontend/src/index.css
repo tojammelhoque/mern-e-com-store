@@ -18,6 +18,11 @@ body {
   margin: auto;
 }
 
+.swiper-slide-active .text {
+  opacity: 1;
+  right: 7%;
+}
+
 .link:hover {
   color: #ff5252;
 }

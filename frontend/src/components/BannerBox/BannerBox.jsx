@@ -12,7 +12,7 @@ function BannerBox({ img, price, title, textDivClass = "" }) {
 
       {/* Text Overlay */}
       <div
-        className={`text-div absolute flex flex-col gap-4 top-[20%]   opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out  ${textDivClass}`}
+        className={`text-div absolute flex flex-col gap-4 top-[12%]   opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out  ${textDivClass}`}
       >
         <h3 className="text-xl font-semibold text-white">{title}</h3>
         <p className="text-lg font-bold text-[#ff5252]">{price}</p>

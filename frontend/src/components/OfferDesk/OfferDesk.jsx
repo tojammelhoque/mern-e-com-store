@@ -7,7 +7,6 @@ import { FreeMode, Pagination } from "swiper/modules";
 import BannerBox from "../BannerBox/BannerBox";
 
 function OfferDesk({ slidesPerView = 3, spaceBetween = 20, slidesData }) {
-  // Default slidesData if not passed as a prop
   const defaultSlidesData = [
     {
       img: "images/asset16.jpeg",
